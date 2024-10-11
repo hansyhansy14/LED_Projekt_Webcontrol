@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPI Led Control</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>RPI Led Control</h1>
+    </div>
+
+    <div class="button-container">
+        <form action="/set_led" method="POST">
+            <button name="led_status" value="on" type="submit" class="button">Turn On</button>
+        </form>
+        <form action="/set_led" method="POST">
+            <button name="led_status" value="off" type="submit" class="button off">Turn Off</button>
+        </form>
+    </div>
+
+    <!-- Display the mxessage if it exists -->
+    {% if message %}
+        <div class="message">{{ message }}</div>
+    {% endif %}
+</body>
+</html>
